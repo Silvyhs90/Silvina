@@ -1,0 +1,90 @@
+﻿@model IEnumerable<tpc5FI.Models.Alojamiento>
+
+@{
+    ViewData["Title"] = "Alojamientos";
+}
+
+<h1>Alojamientos</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Agregar Alojamiento</a>
+    <a asp-controller="Usuario" asp-action="Index" class="btn btn-primary">Volver Usuarios</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ciudad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.barrio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estrellas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cantPersonas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precioxDia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precioxPersona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.habitacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.baño)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ciudad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.barrio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estrellas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantPersonas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precioxDia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precioxPersona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.habitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.baño)
+            </td>
+            <td class="my-2">
+                <a asp-action="Edit" asp-route-id="@item.codigo" class="btn btn-primary my-1">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.codigo" class="btn btn-primary my-1">Detalles</a> 
+                <a asp-action="Delete" asp-route-id="@item.codigo" class="btn btn-danger my-1">Eliminar</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

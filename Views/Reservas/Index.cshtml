@@ -1,0 +1,60 @@
+﻿@model IEnumerable<tpc5FI.Models.Reserva>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Inicio Reservas</h1>
+
+<p>
+   
+    <a asp-controller="Usuario" asp-action="Index" class="btn btn-primary">Volver a Mis Usuarios</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FDesde)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FHasta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codigoAlojamiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codigoPersona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FDesde)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FHasta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigoAlojamiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigoPersona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.id" class="btn btn-primary">Detalles</a> 
+                <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Eliminar</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

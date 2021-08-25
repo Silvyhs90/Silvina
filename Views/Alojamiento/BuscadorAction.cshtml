@@ -1,0 +1,108 @@
+﻿@model IEnumerable<tpc5FI.Models.Alojamiento>
+@using System.Text.Json;
+
+@{
+    ViewData["Title"] = "Resultados";
+}
+
+
+<form asp-controller="Alojamiento" asp-action="filtrar" method="post">
+
+    <select name="filtrar" class="">
+        <option value="estrellas" selected>Estrellas</option>
+        <option value="cantidadPersonas">CantidadPersonas</option>
+        <option value="precioDia">PrecioDia</option>
+        <option value="precioPersona">PrecioPersona</option>
+        <option value="maxPrecio">MaxPrecio</option>
+
+    </select>
+
+    <input hidden value="@JsonSerializer.Serialize(Model.ToList()).ToString()" name="mylista" />
+    <input class="btn btn-primary" type="submit" name="submit" value="filtrar" />
+</form>
+
+<h1>Resultados:</h1>
+<a asp-action="Buscador" class="btn btn-primary">Buscador</a>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ciudad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.barrio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estrellas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cantPersonas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precioxDia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precioxPersona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.habitacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.baño)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ciudad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.barrio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estrellas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cantPersonas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.precioxDia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.precioxPersona)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.habitacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.baño)
+                </td>
+                <td>
+                    <a asp-controller="Reservas" asp-action="Reservar" asp-route-id="@item.codigo" class="btn btn-primary">Reservar</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

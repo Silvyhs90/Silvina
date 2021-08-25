@@ -1,0 +1,49 @@
+﻿@model tpc5FI.Models.Alojamiento
+
+
+@{
+    ViewData["Title"] = "Buscador";
+}
+
+<div>
+    <a asp-controller="Usuario" asp-action="DetailsUsuario" class="btn btn-primary">Volver</a>
+</div>
+
+<h1>Buscador Alojamientos</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="BuscadorAction">
+            <div class="form-group">
+                Tipo: Cabaña-Hotel
+                <input type="text" name="tipo" class="form-control" />
+            </div>
+            <div class="form-group">
+                Ciudad-Barrio
+                <input type="text" name="ciudad" class="form-control" required/>
+            </div>
+            <div class="form-group">
+                Cantidad Personas
+                <input type="number" min="1" name="cantPersonasPedidas" class="form-control" required />
+            </div>
+            <div class="form-group">
+                Fecha Desde
+                <input type="date" name="fechaDesde" class="form-control" required/>
+            </div>
+            <div class="form-group">
+                Fecha Hasta
+                <input type="date" name="fechaHasta" class="form-control" required/>
+            </div>
+            <div>
+                <input type="submit" value="Buscar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

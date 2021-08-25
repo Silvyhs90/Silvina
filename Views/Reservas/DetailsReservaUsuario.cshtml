@@ -1,0 +1,65 @@
+﻿@model IEnumerable<tpc5FI.Models.Reserva>
+
+@{
+    ViewData["Title"] = "Mis Reservas";
+}
+
+<h1>Mis Reservas</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FDesde)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FHasta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codigoAlojamiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codigoPersona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FDesde)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FHasta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codigoAlojamiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codigoPersona)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.precio)
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Cancelar</a>
+
+
+                </td>
+
+            </tr>
+
+
+
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-controller="Usuario" asp-action="DetailsUsuario" class="btn btn-primary">Volver</a>
+</div>

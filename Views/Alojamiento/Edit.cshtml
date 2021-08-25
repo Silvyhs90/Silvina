@@ -1,0 +1,79 @@
+﻿@model tpc5FI.Models.Alojamiento
+
+@{
+    ViewData["Title"] = "Editar Alojamiento";
+}
+
+<h1>Editar</h1>
+
+<h4>Alojamiento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="codigo" />
+            <div class="form-group">
+                <label asp-for="tipo" class="control-label"></label>
+                <input asp-for="tipo" class="form-control" />
+                <span asp-validation-for="tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ciudad" class="control-label"></label>
+                <input asp-for="ciudad" class="form-control" />
+                <span asp-validation-for="ciudad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="barrio" class="control-label"></label>
+                <input asp-for="barrio" class="form-control" />
+                <span asp-validation-for="barrio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="estrellas" class="control-label"></label>
+                <input asp-for="estrellas" class="form-control" />
+                <span asp-validation-for="estrellas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cantPersonas" class="control-label"></label>
+                <input asp-for="cantPersonas" class="form-control" />
+                <span asp-validation-for="cantPersonas" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="tv" /> @Html.DisplayNameFor(model => model.tv)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="precioxDia" class="control-label"></label>
+                <input asp-for="precioxDia" min="1" class="form-control" />
+                <span asp-validation-for="precioxDia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="precioxPersona" class="control-label"></label>
+                <input asp-for="precioxPersona" min="1" class="form-control" />
+                <span asp-validation-for="precioxPersona" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="habitacion" class="control-label"></label>
+                <input asp-for="habitacion" class="form-control" />
+                <span asp-validation-for="habitacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="baño" class="control-label"></label>
+                <input asp-for="baño" class="form-control" />
+                <span asp-validation-for="baño" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar cambios" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index"class="btn btn-danger">Cancelar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

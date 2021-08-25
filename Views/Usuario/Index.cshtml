@@ -1,0 +1,69 @@
+﻿@model IEnumerable<tpc5FI.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<h1>Usuarios</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear Usuario</a>
+    <a asp-area="" asp-controller="Alojamiento" asp-action="Index" class="btn btn-primary">Alojamientos</a>
+    <a asp-area="" asp-controller="Reservas" asp-action="Index" class="btn btn-primary">Reservas</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.dni)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.esAdmin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bloqueado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dni)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.esAdmin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bloqueado)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.usuarioID" class="btn btn-primary">Editar</a> 
+                    <a asp-action="Details" asp-route-id="@item.usuarioID" class="btn btn-primary">Detalles</a> 
+                    <a asp-action="Delete" asp-route-id="@item.usuarioID" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

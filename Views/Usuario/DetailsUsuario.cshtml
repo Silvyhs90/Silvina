@@ -1,0 +1,57 @@
+﻿@model tpc5FI.Models.Usuario
+
+@{
+    ViewData["Title"] = "Detalle ";
+}
+
+<h1>Detalles</h1>
+
+
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dni)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dni)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.password)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.esAdmin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.esAdmin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bloqueado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bloqueado)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditUsuario" asp-route-id="@Model.usuarioID" class="btn btn-primary">Editar</a> 
+    <a asp-controller="Alojamiento" asp-action="Buscador" class="btn btn-primary">Buscador Alojamientos</a> 
+    <a asp-controller="Reservas" asp-action="DetailsReservaUsuario" class="btn btn-primary">Mis Reservas</a>
+</div>

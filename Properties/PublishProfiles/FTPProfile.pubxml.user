@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4PU/UbRV+UeOkoen4Mb3YAAAAAACAAAAAAAQZgAAAAEAACAAAAC0V4tOi2CI80eKPPYgdMtSHPZecNN2+uS9rRp3pI7l4gAAAAAOgAAAAAIAACAAAACVF+FeKufWHeN7pPbJXiFP3t2UzbgwMlQfaK1ElKgW6CAAAABuygfKmp367I1V9ATXqx1WpgKXakhSOHoxcmyCv9gKwUAAAACik2+d+01PfulpR3rLE+NO/zdXmOLPETYE4whRgeO6FxZmzpqQZZXzyquKIPFHexcuFFH+6XBZzNfIwfB7/PmP</EncryptedPassword>
+    <_PublishTargetUrl>ftp://ftp.site4now.net/https://kaname1990-001-site1.htempurl.com:8172/MsDeploy.axd?site=kaname1990-001-site1</_PublishTargetUrl>
+    <History>False|2021-08-25T02:26:43.7736168Z;</History>
+  </PropertyGroup>
+</Project>

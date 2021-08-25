@@ -1,0 +1,41 @@
+﻿@model tpc5FI.Models.Usuario
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="text-center">
+    <h1 class="display-4 font-weight-bold">Inicio Sesion</h1>
+    <img src="/images/logo_login.png" width="200" height="300" alt="login" class="img-fluid  pt-3">
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="usuarioID" />
+            <input type="hidden" asp-for="esAdmin" />
+            <input type="hidden" asp-for="bloqueado" />
+            <input type="hidden" asp-for="nombre" />
+            <input type="hidden" asp-for="mail" />
+            <div class="form-group">
+                <label asp-for="dni" class="control-label"></label>
+                <input asp-for="dni" class="form-control"  required />
+                <span asp-validation-for="dni" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="password" class="control-label"></label>
+                <input asp-for="password" class="form-control" required/>
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ingresar" class="btn btn-primary" />
+            </div>
+        </form>
+        <a class="btn btn-primary" asp-area="" asp-controller="Usuario" asp-action="CreateUsuario">Nuevo Usuario</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
